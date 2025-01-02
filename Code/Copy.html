@@ -1,0 +1,478 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Library Management System
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 1rem;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        header nav ul li {
+            margin-left: 1rem;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 1rem;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+        }
+        .card {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            flex: 0 0 auto;
+        }
+        .card img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: #4b5563;
+        }
+        .member-card {
+            display: flex;
+            align-items: center;
+        }
+        .member-card img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 9999px;
+            margin-right: 1rem;
+        }
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .auth-buttons button {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+        .auth-buttons button:hover {
+            background-color: #374151;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 400px;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-content form input {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.25rem;
+        }
+        .modal-content form button {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+        .modal-content form button:hover {
+            background-color: #374151;
+        }
+        .close-modal {
+            background-color: #e5e7eb;
+            color: #1f2937;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .close-modal:hover {
+            background-color: #d1d5db;
+        }
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <h1>
+     Library Management System
+    </h1>
+    <nav>
+     <ul>
+      <li>
+       <a href="#">
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        Books
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        Members
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        About
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <div class="auth-buttons">
+     <button id="user-login-btn">
+      User Login
+     </button>
+     <button id="admin-login-btn">
+      Admin Login
+     </button>
+     <button id="register-btn">
+      Register
+     </button>
+    </div>
+   </div>
+  </header>
+  <main class="container">
+   <section class="mb-8">
+    <h2 class="section-title">
+     Featured Books
+    </h2>
+    <div class="horizontal-scroll">
+     <div class="card">
+      <img alt="Cover of the book 'The Great Gatsby' with an illustration of a man in a suit and a cityscape in the background" height="300" src="https://storage.googleapis.com/a1aa/image/Ktpi19RUvsrrGdvfNv4dhewvMeOzkEL5yPYLneI71OjThwyPB.jpg" width="200"/>
+      <h3>
+       The Great Gatsby
+      </h3>
+      <p>
+       by F. Scott Fitzgerald
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'To Kill a Mockingbird' with an illustration of a tree and a bird" height="300" src="https://storage.googleapis.com/a1aa/image/NkodxjZ1mULwH5AjeO0z6i4mvJsPBMtGTAkBiGqesPsGIs8TA.jpg" width="200"/>
+      <h3>
+       To Kill a Mockingbird
+      </h3>
+      <p>
+       by Harper Lee
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book '1984' with an illustration of a dystopian cityscape" height="300" src="https://storage.googleapis.com/a1aa/image/eIcPBwWm6R02KC656vlkbHQVgDVdZrA9zFHNDOnngP99DWeTA.jpg" width="200"/>
+      <h3>
+       1984
+      </h3>
+      <p>
+       by George Orwell
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'Pride and Prejudice' with an illustration of a woman in a dress" height="300" src="https://storage.googleapis.com/a1aa/image/cWGOIPbNzTrFAZfApG4YEpvc1GUEVXk3BhAujnIKucTMEWeTA.jpg" width="200"/>
+      <h3>
+       Pride and Prejudice
+      </h3>
+      <p>
+       by Jane Austen
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'Moby Dick' with an illustration of a whale" height="300" src="https://storage.googleapis.com/a1aa/image/rADkjvMXBh4gGJf404XA7vk9TOCWCM6HE0W8dCAOP7nHEWeTA.jpg" width="200"/>
+      <h3>
+       Moby Dick
+      </h3>
+      <p>
+       by Herman Melville
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'War and Peace' with an illustration of a battlefield" height="300" src="https://storage.googleapis.com/a1aa/image/wY47fjqwGi3eEkvgUverFXKfSq33vseMgZ7KIKgGcRlNAhlfE.jpg" width="200"/>
+      <h3>
+       War and Peace
+      </h3>
+      <p>
+       by Leo Tolstoy
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="mb-8">
+    <h2 class="section-title">
+     New Arrivals
+    </h2>
+    <div class="horizontal-scroll">
+     <div class="card">
+      <img alt="Cover of the book 'The Catcher in the Rye' with an illustration of a young man in a red hunting hat" height="300" src="https://storage.googleapis.com/a1aa/image/X92luXG42V7HMVYbD6jfffnebFYhR3Z7eVYPq8sUqNlofBLfJA.jpg" width="200"/>
+      <h3>
+       The Catcher in the Rye
+      </h3>
+      <p>
+       by J.D. Salinger
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'The Hobbit' with an illustration of a hobbit hole" height="300" src="https://storage.googleapis.com/a1aa/image/WKELLzPECQofDCkSgLIHfbQe7LFp8Qnn8AoGm3tWBcS0PY5nA.jpg" width="200"/>
+      <h3>
+       The Hobbit
+      </h3>
+      <p>
+       by J.R.R. Tolkien
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'Brave New World' with an illustration of a futuristic city" height="300" src="https://storage.googleapis.com/a1aa/image/wTU1XhezBNT2dyBsQnb0C4HMnan6ClRHQwffBOAD88zlQY5nA.jpg" width="200"/>
+      <h3>
+       Brave New World
+      </h3>
+      <p>
+       by Aldous Huxley
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'The Lord of the Rings' with an illustration of a ring" height="300" src="https://storage.googleapis.com/a1aa/image/eQQwBMh0wvxXKC6cXTqkmniefeiJ5Jg7J2TZSAP8v1lngwyPB.jpg" width="200"/>
+      <h3>
+       The Lord of the Rings
+      </h3>
+      <p>
+       by J.R.R. Tolkien
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'The Alchemist' with an illustration of a desert" height="300" src="https://storage.googleapis.com/a1aa/image/anl83SIyX9K2DBjmjlJjVJuUOZsDmylzW1f8oInCj7pBEWeTA.jpg" width="200"/>
+      <h3>
+       The Alchemist
+      </h3>
+      <p>
+       by Paulo Coelho
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Cover of the book 'The Da Vinci Code' with an illustration of the Mona Lisa" height="300" src="https://storage.googleapis.com/a1aa/image/fmIaf5t5LLhFBkRLhIIPMChcw0obQZueVSqdZ7enF7zGhwyPB.jpg" width="200"/>
+      <h3>
+       The Da Vinci Code
+      </h3>
+      <p>
+       by Dan Brown
+      </p>
+     </div>
+    </div>
+   </section>
+   <section>
+    <h2 class="section-title">
+     Library Members
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+     <div class="card member-card">
+      <img alt="Profile picture of John Doe, a middle-aged man with glasses and a friendly smile" height="100" src="https://storage.googleapis.com/a1aa/image/keCTArnL6flfEJQvWzyRTTgpMCx97dtMGkcmz13GBG3bQY5nA.jpg" width="100"/>
+      <div>
+       <h3>
+        John Doe
+       </h3>
+       <p>
+        Member since 2020
+       </p>
+      </div>
+     </div>
+     <div class="card member-card">
+      <img alt="Profile picture of Jane Smith, a young woman with long hair and a bright smile" height="100" src="https://storage.googleapis.com/a1aa/image/kIhSh42updqgFNkT6wxfAwmqAejmyYYYNx4db3JZXQILIs8TA.jpg" width="100"/>
+      <div>
+       <h3>
+        Jane Smith
+       </h3>
+       <p>
+        Member since 2019
+       </p>
+      </div>
+     </div>
+     <div class="card member-card">
+      <img alt="Profile picture of Robert Brown, an elderly man with a beard and a kind expression" height="100" src="https://storage.googleapis.com/a1aa/image/0czHOwfbaOyIeEwB1bI9z6C5CT80VbSvZu9Bt6USeUSffglfE.jpg" width="100"/>
+      <div>
+       <h3>
+        Robert Brown
+       </h3>
+       <p>
+        Member since 2018
+       </p>
+      </div>
+     </div>
+     <div class="card member-card">
+      <img alt="Profile picture of Emily Davis, a young woman with short hair and a cheerful smile" height="100" src="https://storage.googleapis.com/a1aa/image/R5ljaIItxSZhIthg927rtSfaF0vUVt9yraNoxpLcvaULEWeTA.jpg" width="100"/>
+      <div>
+       <h3>
+        Emily Davis
+       </h3>
+       <p>
+        Member since 2021
+       </p>
+      </div>
+     </div>
+     <div class="card member-card">
+      <img alt="Profile picture of Michael Wilson, a middle-aged man with a serious expression" height="100" src="https://storage.googleapis.com/a1aa/image/9ZrsnBRDbdZsLlklGZzCdyGZyNjgKi0Kn1iux8ygrfBEEWeTA.jpg" width="100"/>
+      <div>
+       <h3>
+        Michael Wilson
+       </h3>
+       <p>
+        Member since 2017
+       </p>
+      </div>
+     </div>
+     <div class="card member-card">
+      <img alt="Profile picture of Sarah Johnson, a young woman with curly hair and a warm smile" height="100" src="https://storage.googleapis.com/a1aa/image/fmLtfnTblCi5BE9pQF8GCSWAfkElfGw7oeYRGnzSn0eEBCLfJA.jpg" width="100"/>
+      <div>
+       <h3>
+        Sarah Johnson
+       </h3>
+       <p>
+        Member since 2022
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <p>
+    © 2023 Library Management System. All rights reserved.
+   </p>
+  </footer>
+  <div class="modal" id="user-login-modal">
+   <div class="modal-content">
+    <h2>
+     User Login
+    </h2>
+    <form>
+     <input placeholder="Username" type="text"/>
+     <input placeholder="Password" type="password"/>
+     <button type="submit">
+      Login
+     </button>
+     <button class="close-modal" type="button">
+      Close
+     </button>
+    </form>
+   </div>
+  </div>
+  <div class="modal" id="admin-login-modal">
+   <div class="modal-content">
+    <h2>
+     Admin Login
+    </h2>
+    <form>
+     <input placeholder="Admin Username" type="text"/>
+     <input placeholder="Admin Password" type="password"/>
+     <button type="submit">
+      Login
+     </button>
+     <button class="close-modal" type="button">
+      Close
+     </button>
+    </form>
+   </div>
+  </div>
+  <div class="modal" id="register-modal">
+   <div class="modal-content">
+    <h2>
+     Register
+    </h2>
+    <form>
+     <input placeholder="Full Name" type="text"/>
+     <input placeholder="Email" type="email"/>
+     <input placeholder="Password" type="password"/>
+     <button type="submit">
+      Register
+     </button>
+     <button class="close-modal" type="button">
+      Close
+     </button>
+    </form>
+   </div>
+  </div>
+  <script>
+   document.getElementById('user-login-btn').addEventListener('click', function() {
+            document.getElementById('user-login-modal').style.display = 'flex';
+        });
+
+        document.getElementById('admin-login-btn').addEventListener('click', function() {
+            document.getElementById('admin-login-modal').style.display = 'flex';
+        });
+
+        document.getElementById('register-btn').addEventListener('click', function() {
+            document.getElementById('register-modal').style};

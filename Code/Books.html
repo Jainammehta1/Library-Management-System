@@ -1,0 +1,940 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Library Management System
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #555;
+        }
+        .course {
+            margin-bottom: 40px;
+        }
+        .course h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        .book img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .book a:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+         
+  </style>
+ </head>
+ <body>
+  <header>
+   <h1>
+    Library Management System
+   </h1>
+   <nav>
+    <ul>
+     <li>
+      <a href="Home.html">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Contact
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <div class="container">
+   <div class="search-bar">
+    <input id="searchInput" placeholder="Search for a book..." type="text"/>
+    <button onclick="searchBooks()">
+     Search
+    </button>
+   </div>
+   <div class="course">
+    <h2>
+     BSc IT - 1st Year
+    </h2>
+   
+    <table id="bscIt1stYear">
+     <thead>
+      <tr>
+       <th>
+        Cover
+       </th>
+       <th>
+        Title
+       </th>
+       <th>
+        Author
+       </th>
+       <th>
+        Download
+       </th>
+       <th>
+        View
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Introduction to Programming' with a detailed illustration of coding concepts" height="150" src="BookLogo/Commskills.png" width="100"/>
+       </td>
+       <td>
+       Communication Skills
+       </td>
+       <td>
+        University of Mumbai
+       </td>
+       <td>
+        <a download="" href="Books/USIT105-Communication-Skill (1).pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="Books/USIT105-Communication-Skill (1).pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/Discretemathametics.png" width="100"/>
+       </td>
+       <td>
+        Discrete Mathametics
+       </td>
+       <td>
+        University of Mumbai
+       </td>
+       <td>
+        <a download="" href="Books/USIT104-Discrete-Mathematics.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="Books/USIT104-Discrete-Mathematics.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/DigitalEl.png" width="100"/>
+        </td>
+        <td>
+         Digital Electronics
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT102-Digital-Electronic.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT102-Digital-Electronic.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/OS.png" width="100"/>
+        </td>
+        <td>
+         Operating Systems
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT103-Operating-System.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT103-Operating-System.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/C.png" width="100"/>
+        </td>
+        <td>
+       Imperative-Programming
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT101-Imperative-Programming.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT101-Imperative-Programming.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/C.png" width="100"/>
+        </td>
+        <td>
+       Imperative-Programming
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT101-Imperative-Programming.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT101-Imperative-Programming.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/oops.png" width="100"/>
+        </td>
+        <td>
+            Object Oriented Programming
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT201-Object-Oriented-Programming.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT201-Object-Oriented-Programming.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/MPMC.png" width="100"/>
+        </td>
+        <td>
+           Microprocessor Architecture
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT202-Microprocessor-Architecture.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT202-Microprocessor-Architecture.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/WAD.png" width="100"/>
+        </td>
+        <td>
+           Web Programming
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT203-Web-programmig.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT203-Web-programmig.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/Nsm.png" width="100"/>
+        </td>
+        <td>
+        Numerical and Statistical methods
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT204-Numerical-and-Statistical-methods.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT204-Numerical-and-Statistical-methods.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Data Structures' with a detailed illustration of data structures concepts" height="150" src="BookLogo/Gc.png" width="100"/>
+        </td>
+        <td>
+        Green Computing
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT205-Green-Computing.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT205-Green-Computing.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="course">
+    <h2>
+     BSc IT - 2nd Year
+    </h2>
+    <table id="bscIt2ndYear">
+     <thead>
+      <tr>
+       <th>
+        Cover
+       </th>
+       <th>
+        Title
+       </th>
+       <th>
+        Author
+       </th>
+       <th>
+        Download
+       </th>
+       <th>
+        View
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Database Management Systems' with a detailed illustration of database concepts" height="150" src="BookLogo/Python.png" width="100"/>
+       </td>
+       <td>
+       Python Programming
+       </td>
+       <td>
+        University of Mumbai
+       </td>
+       <td>
+        <a download="" href="Books/USIT-301-Python-Programming.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="Books/USIT-301-Python-Programming.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/DSA.png" width="100"/>
+       </td>
+       <td>
+        Data Structures
+       </td>
+       <td>
+        University of Mumbai
+       </td>
+       <td>
+        <a download="" href="Books/USIT302-Data-Structures.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="Books/USIT302-Data-Structures.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/CN.png" width="100"/>
+        </td>
+        <td>
+         Computer Networks
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT303-Computer-Networks.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT303-Computer-Networks.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/Dbms.png" width="100"/>
+        </td>
+        <td>
+        Database Management System
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT304-Database-Management-Systems.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT304-Database-Management-Systems.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/AppliedMaths.png" width="100"/>
+        </td>
+        <td>
+        Applied Mathametics
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/Applied-Mathematics-S.Y.B.Sc.I.T-Semester-3-FINAL-1.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/Applied-Mathematics-S.Y.B.Sc.I.T-Semester-3-FINAL-1.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/Java.png" width="100"/>
+        </td>
+        <td>
+        Core Java
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT-401-CORE-JAVA.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT-401-CORE-JAVA.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/ES.png" width="100"/>
+        </td>
+        <td>
+        Introduction To Embedded System
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/Introduction-to-Embedded-System-S.Y.B.Sc.I.T-Semester-4.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/Introduction-to-Embedded-System-S.Y.B.Sc.I.T-Semester-4.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/SE.png" width="100"/>
+        </td>
+        <td>
+        Software Engineering
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT-404-Software-Engineering.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT-404-Software-Engineering.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+       <tr class="book">
+        <td>
+         <img alt="Cover of the book 'Operating Systems' with a detailed illustration of operating system concepts" height="150" src="BookLogo/Computersgraphics.png" width="100"/>
+        </td>
+        <td>
+        Computer Graphics and Animation
+        </td>
+        <td>
+         University of Mumbai
+        </td>
+        <td>
+         <a download="" href="Books/USIT-405-Computer-Graphics-and-Animation.pdf">
+          Download PDF
+         </a>
+        </td>
+        <td>
+         <a href="Books/USIT-405-Computer-Graphics-and-Animation.pdf" target="_blank">
+          View PDF
+         </a>
+        </td>
+       </tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="course">
+    <h2>
+     BSc IT - 3rd Year
+    </h2>
+    <table id="bscIt3rdYear">
+     <thead>
+      <tr>
+       <th>
+        Cover
+       </th>
+       <th>
+        Title
+       </th>
+       <th>
+        Author
+       </th>
+       <th>
+        Download
+       </th>
+       <th>
+        View
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Software Engineering' with a detailed illustration of software engineering concepts" height="150" src="BookLogo/IOT.png" width="100"/>
+       </td>
+       <td>
+       Internet Of Things
+       </td>
+       <td>
+        University of Mumbai
+       </td>
+       <td>
+        <a download="" href="Books/Internet-of-Things.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="Books/Internet-of-Things.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Computer Networks' with a detailed illustration of networking concepts" height="150" src="BookLogo/Softwareproject.png" width="100"/>
+       </td>
+       <td>
+        Software Project Management
+       </td>
+       <td>
+        University of Mumbai
+       </td>
+       <td>
+        <a download="" href="Books/Software-Project-Management.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="Books/Software-Project-Management.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="course">
+    <h2>
+     BAFTNMP - 1st Year
+    </h2>
+    <table id="baftnmp1stYear">
+     <thead>
+      <tr>
+       <th>
+        Cover
+       </th>
+       <th>
+        Title
+       </th>
+       <th>
+        Author
+       </th>
+       <th>
+        Download
+       </th>
+       <th>
+        View
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Introduction to Film Studies' with a detailed illustration of film concepts" height="150" src="https://storage.googleapis.com/a1aa/image/tPh6SYBtHUIrAph1eMOERDgN0qwP6jqkhH0FRLUiHfueSIAoA.jpg" width="100"/>
+       </td>
+       <td>
+        Introduction to Film Studies
+       </td>
+       <td>
+        Mark Turner
+       </td>
+       <td>
+        <a download="" href="path/to/introduction_to_film_studies.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="path/to/introduction_to_film_studies.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Media and Society' with a detailed illustration of media concepts" height="150" src="https://storage.googleapis.com/a1aa/image/M5pUzKkQSiInNtu6dzTYXOQZr3IWmqMcpfaViTxP2drsECAKA.jpg" width="100"/>
+       </td>
+       <td>
+        Media and Society
+       </td>
+       <td>
+        Sarah Lee
+       </td>
+       <td>
+        <a download="" href="path/to/media_and_society.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="path/to/media_and_society.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="course">
+    <h2>
+     BAFTNMP - 2nd Year
+    </h2>
+    <table id="baftnmp2ndYear">
+     <thead>
+      <tr>
+       <th>
+        Cover
+       </th>
+       <th>
+        Title
+       </th>
+       <th>
+        Author
+       </th>
+       <th>
+        Download
+       </th>
+       <th>
+        View
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Film Production Techniques' with a detailed illustration of film production concepts" height="150" src="https://storage.googleapis.com/a1aa/image/DlJfG31dFQUnF60jSHMSIEgveqYkNlDiXfwt3ptw8XAZSIAoA.jpg" width="100"/>
+       </td>
+       <td>
+        Film Production Techniques
+       </td>
+       <td>
+        David Brown
+       </td>
+       <td>
+        <a download="" href="path/to/film_production_techniques.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="path/to/film_production_techniques.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Screenwriting Basics' with a detailed illustration of screenwriting concepts" height="150" src="https://storage.googleapis.com/a1aa/image/0XbxUjK7DGLMGdIrceUM3ERkcKr9E27alJRv6BrW3fMbJEAUA.jpg" width="100"/>
+       </td>
+       <td>
+        Screenwriting Basics
+       </td>
+       <td>
+        Laura White
+       </td>
+       <td>
+        <a download="" href="path/to/screenwriting_basics.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="path/to/screenwriting_basics.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="course">
+    <h2>
+     BAFTNMP - 3rd Year
+    </h2>
+    <table id="baftnmp3rdYear">
+     <thead>
+      <tr>
+       <th>
+        Cover
+       </th>
+       <th>
+        Title
+       </th>
+       <th>
+        Author
+       </th>
+       <th>
+        Download
+       </th>
+       <th>
+        View
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Advanced Film Studies' with a detailed illustration of advanced film concepts" height="150" src="https://storage.googleapis.com/a1aa/image/OywL8n2Obi6aH11qSON6jKwZLuLooKxVMBOfjZQQAlMqECAKA.jpg" width="100"/>
+       </td>
+       <td>
+        Advanced Film Studies
+       </td>
+       <td>
+        James Black
+       </td>
+       <td>
+        <a download="" href="path/to/advanced_film_studies.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="path/to/advanced_film_studies.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+      <tr class="book">
+       <td>
+        <img alt="Cover of the book 'Documentary Filmmaking' with a detailed illustration of documentary filmmaking concepts" height="150" src="https://storage.googleapis.com/a1aa/image/LlfBiQ5CabxxEKrmn69w2Qv44rYJB2unjvcxdxTJBM7rECAKA.jpg" width="100"/>
+       </td>
+       <td>
+        Documentary Filmmaking
+       </td>
+       <td>
+        Anna Gray
+       </td>
+       <td>
+        <a download="" href="path/to/documentary_filmmaking.pdf">
+         Download PDF
+        </a>
+       </td>
+       <td>
+        <a href="path/to/documentary_filmmaking.pdf" target="_blank">
+         View PDF
+        </a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <footer>
+   <p>
+    © 2023 Library Management System. All rights reserved.
+   </p>
+  </footer>
+  <script>
+   function searchBooks() {
+            var input, filter, tables, tr, td, i, j, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            tables = document.querySelectorAll("table");
+            for (var table of tables) {
+                tr = table.getElementsByTagName("tr");
+                for (i = 1; i < tr.length; i++) {
+                    tr[i].style.display = "none";
+                    td = tr[i].getElementsByTagName("td");
+                    for (j = 0; j < td.length; j++) {
+                        if (td[j]) {
+                            txtValue = td[j].textContent || td[j].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+  </script>
+ </body>
+</html>

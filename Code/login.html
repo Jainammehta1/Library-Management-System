@@ -1,0 +1,138 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Library Management System - Login
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #edeeee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .flex a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .flex a:hover {
+            text-decoration: underline;
+        }
+        button {
+            width: 100%;
+            background-color: #3b82f6;
+            color: #ffffff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+        p {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        p a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        p a:hover {
+            text-decoration: underline;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="logo">
+    <img alt="Library logo with books and a magnifying glass" height="100" src="https://storage.googleapis.com/a1aa/image/9zlfYUHbfeORXJ0NeGftdfJ9YjfYChLlJFjNPDD9aFHGkDWfTA.jpg" width="100"/>
+   </div>
+   <h2>
+    Library Management System
+   </h2>
+   <form>
+    <label for="email">
+     Email
+    </label>
+    <input id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+    <label for="password">
+     Password
+    </label>
+    <input id="password" name="password" placeholder="Enter your password" required="" type="password"/>
+    <div class="flex">
+     <div>
+      <input id="remember" name="remember" type="checkbox"/>
+      <label for="remember">
+       Remember me
+      </label>
+     </div>
+     <a href="forgot.html">
+      Forgot password?
+     </a>
+    </div>
+    <a href="Home.html"><button type="submit">
+     Login
+    </button></a>
+   </form>
+   <p>
+    Don't have an account?
+    <a href="register.html">
+     Sign up
+    </a>
+   </p>
+  </div>
+ </body>
+</html>
